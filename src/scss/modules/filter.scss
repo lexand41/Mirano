@@ -1,0 +1,52 @@
+@use "../varibles" as *;
+
+.filter {
+
+  &__fieldset {
+    border: none;
+  }
+
+  &__radio {
+    position: absolute;
+    appearance: none;
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 300px;
+    padding: 16px;
+    padding-left: 56px;
+    background: $white;
+    color: $dark;
+
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 16px center;
+    border: 1px solid transparent;
+
+
+    &:hover {
+      border: 1px solid $light-orange;
+    }
+  }
+
+  &__label-flowers {
+    background-image: url('/img/filter-flowers.svg');
+  }
+
+  &__label-toys {
+    background-image: url('/img/filter-toys.svg');
+  }
+
+  &__label-postcards {
+    background-image: url('/img/filter-postcards.svg');
+  }
+
+  &__radio:checked + &__label {
+    background-color: $light-orange;
+    color: $white;
+  }
+}
+
