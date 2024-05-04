@@ -1,7 +1,13 @@
-@use "../varibles" as *;
+@use "../variables" as *;
+@use "../media" as *;
 
 .subscribe {
-  padding: 140px 0;
+  padding-top: 80px;
+  padding-bottom: 140px;
+
+  @include tablet {
+    padding: 60px 0 100px;
+  }
 
   &__form {
     position: relative;
@@ -16,11 +22,16 @@
     font-weight: 400;
     font-family: $second-family;
     font-size: 50px;
+    @include responsive-font-size(32, 50, 768, 1440);
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
     color: $green;
     margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
   }
 
   &__input {

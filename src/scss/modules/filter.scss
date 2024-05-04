@@ -1,9 +1,30 @@
-@use "../varibles" as *;
+@use "../variables" as *;
+@use "../media" as *;
 
 .filter {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
 
-  &__fieldset {
-    border: none;
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    gap: 12px;
+
+    &_choices {
+      gap: 64px;
+
+      @include mobile {
+        gap: 40px;
+      }
+    }
   }
 
   &__radio {
@@ -17,36 +38,126 @@
     cursor: pointer;
     border-radius: 300px;
     padding: 16px;
-    padding-left: 56px;
-    background: $white;
+    padding-left: 60px;
+    background-color: $white;
     color: $dark;
 
     background-repeat: no-repeat;
     background-size: 40px;
-    background-position: 16px center;
+    background-position: left 16px center;
     border: 1px solid transparent;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
 
+    @include mobile {
+      padding: 10px 12px 10px 40px;
+      background-size: 24px;
+      background-position: left 12px center;
+  
+      min-height: 40px;
+    }
+
+    &_flowers {
+      background-image: url('/img/flowers.png');
+    }
+
+    &_toys {
+      background-image: url('/img/toys.png');
+    }
+
+    &_postcards {
+      background-image: url('/img/postcards.png');
+    }
 
     &:hover {
       border: 1px solid $light-orange;
     }
   }
 
-  &__label-flowers {
-    background-image: url('/img/filter-flowers.svg');
-  }
-
-  &__label-toys {
-    background-image: url('/img/filter-toys.svg');
-  }
-
-  &__label-postcards {
-    background-image: url('/img/filter-postcards.svg');
+  &__radio:focus-visible + &__label {
+    outline: 2px solid $orange;
   }
 
   &__radio:checked + &__label {
     background-color: $light-orange;
     color: $white;
   }
+
+
+
+  &__group {
+  }
+
+  &__choices {
+    position: relative;
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: url('/img/arrow.svg') no-repeat center/contain;
+    }
+  }
+
+  &__price {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 8px;
+  }
+
+  &__choices-box {
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $white;
+    padding: 24px;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+  }
+
+  &__input-price {
+    border-radius: 32px;
+    padding: 8px 16px;
+    width: 110px;
+    height: 40px;
+    background-color: $bg;
+    border: none;
+  }
+
+  &__type-list {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 196px;
+  }
+
+  &__type-item {
+  }
+
+  &__type-button {
+    white-space: nowrap;
+    
+    &:hover {
+      color: $orange;
+    }
+  }
 }
+
+
+
+
+
 
