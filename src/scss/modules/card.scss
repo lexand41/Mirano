@@ -9,6 +9,8 @@
   display: flex;
   flex-direction: column;
   background-color: $white;
+  max-width: 310px;
+
 
   @include mobile {
     min-height: 380px;
