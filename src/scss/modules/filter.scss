@@ -2,7 +2,7 @@
 @use "../media" as *;
 
 .filter {
-  &__container {
+  &__form {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -124,6 +124,13 @@
     border-radius: 12px;
     box-sizing: border-box;
 
+    &_type {
+      @include mobile {
+        padding: 16px;
+      }  
+    }
+
+
   }
 
   &__input-price {
@@ -133,24 +140,37 @@
     height: 40px;
     background-color: $bg;
     border: none;
+
+    @include mobile {
+      width: 80px;
+    }
   }
 
   &__type-list {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 196px;
+    // padding: 0;
+    // width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 8px;
+    // width: 196px;
   }
 
   &__type-item {
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__type-button {
     white-space: nowrap;
     
     &:hover {
+      color: $light-orange;
+    }
+
+    &:active {
       color: $orange;
     }
   }

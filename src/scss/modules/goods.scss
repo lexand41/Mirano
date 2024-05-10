@@ -11,7 +11,13 @@
   &__container {
     display: flex;
     justify-content: center;
+    align-items: start;
     gap: 20px;
+  }
+
+  &__box {
+    flex-grow: 1;
+    max-width: 970px;
   }
 
   &__title {
@@ -27,21 +33,21 @@
 
   &__list {
     display: grid;
-    // grid-template-columns: repeat(auto-fit, 310px);
-    grid-template-columns: repeat(3, minmax(290px, 1fr));
+    grid-template-columns: repeat(auto-fit, 310px);
+    // grid-template-columns: repeat(3, minmax(290px, 1fr));
 
-    max-width: 970px;
+    // max-width: 970px;
     margin: 0 auto;
     justify-content: center;
     gap: 24px 20px;
 
-    @include laptop {
-      grid-template-columns: repeat(2, 310px);
-    }
+    // @include laptop {
+    //   grid-template-columns: repeat(2, 310px);
+    // }
 
-    @include tablet {
-      grid-template-columns: 310px;
-    }
+    // @include tablet {
+    //   grid-template-columns: 310px;
+    // }
 
     @include mobile {
       grid-template-columns: repeat(2, minmax(140px, 1fr));

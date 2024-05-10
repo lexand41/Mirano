@@ -17,8 +17,8 @@
     right: 0;
     z-index: 998;
     box-shadow: 0 4px 2px -2px $footer;
-    background-color: $footer;
-    animation: slideDown 0.6s forwards;
+    background-color: $bg;
+    animation: slideDown 0.4s forwards;
   }
 
   @include mobile {
